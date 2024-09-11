@@ -58,7 +58,7 @@ const Carousel = (props: Props) => {
               onClick={goToPrevious}
             >
               <img
-                src="/siicsa/iamges/chevron-left.svg"
+                src="/siicsa/images/chevron-left.svg"
                 className="md:w-[64px]"
                 alt=""
               />
@@ -97,7 +97,7 @@ const Carousel = (props: Props) => {
               onClick={goToNext}
             >
               <img
-                src="/siicsa/iamges/chevron-right.svg"
+                src="/siicsa/images/chevron-right.svg"
                 className="2xl:w-[64px]"
                 alt=""
               />

@@ -12,7 +12,7 @@ const Politicas = () => {
         <div className="grow h-[2px] bg-[#c6101d]"></div>
         <div className="w-fit flex justify-around gap-3 text-sm text-gray-400 my-2">
           <img
-            src="/siicsa/iamges/down.svg"
+            src="/siicsa/images/down.svg"
             className={
               (showPoliticas ? "rotate-180" : "") +
               " w-3 ml-3 transition-all duration-200"
@@ -24,7 +24,7 @@ const Politicas = () => {
             : "Ver Política de Privacidad"}
 
           <img
-            src="/siicsa/iamges/down.svg"
+            src="/siicsa/images/down.svg"
             className={
               (showPoliticas ? "rotate-180" : "") +
               " w-3 mr-3 transition-all duration-200"
