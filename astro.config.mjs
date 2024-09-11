@@ -10,4 +10,6 @@ export default defineConfig({
     port: 3000,
     host:'192.168.0.22'
    }*/
+    site: 'https://siicsa.github.io',
+    base: 'siicsa',
 });
