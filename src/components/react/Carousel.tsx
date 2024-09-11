@@ -1,6 +1,6 @@
 import React, { useState, useEffect, type FC } from "react";
 import axios from "axios";
-import "./Carousel.css";
+import "./carousel.css";
 
 interface Props {
   idCarousel: number;
