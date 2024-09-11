@@ -1,0 +1,154 @@
+---
+import AccordionMobile from "../components/AccordionMobile.astro";
+---
+
+<div class="pb-5 md:py-10 text-center">
+  <h1 class="py-5 md:py-10 text-2xl md:text-4xl font-bold">
+    Nuestros servicios
+  </h1>
+  <section class="hidden card-list md:flex flex-wrap gap-5 justify-around">
+    <div class="card" id="card_1">
+      <div class="front">
+        <img
+          src="/cards/card_1.jpg"
+          class="w-full h-full object-cover"
+          alt=""
+        />
+      </div>
+      <div class="back">
+        <h1 class="block w-full">Gerencia <br /> de Proyectos</h1>
+        <p>
+          Es el proceso que involucra la planificación de un proyecto, monitoreo
+          y control de la obra para que se lleve a cabo de manera exitosa,
+          organizando y administrando los recursos del proyecto para que sea
+          elaborado y terminado completamente dentro de las condiciones del
+          alcance, tiempo y costo planificado.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="front">
+        <img
+          src="/cards/card_3.jpg"
+          class="w-full h-full object-cover"
+          alt=""
+        />
+      </div>
+      <div class="back">
+        <h1 class="block w-full">Supervisión <br /> de Obra Civil</h1>
+        <p>
+          Proceso orientado a la función administrativa de la Dirección o
+          Gerenciamiento; Planeación, organización, control y conciliación en
+          los procesos constructivos. Sus responsabilidades caen en la
+          supervisión del cumplimiento del tiempo de ejecución, costos, y la
+          calidad con respecto a los requerimientos del constructor o
+          desarrollador...
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="front">
+        <img
+          src="/cards/card_2.jpg"
+          class="w-full h-full object-cover"
+          alt=""
+        />
+      </div>
+      <div class="back">
+        <h1 class="block w-full">Proyectos <br /> Ejecutivos</h1>
+        <p>
+          Una de las fases en la elaboración de una Obra / Proyecto, es el
+          Proyecto Ejecutivo, en donde se definen los diseños del proyecto /
+          planos de dibujos detallados, el cálculo estructural, las memorias
+          descriptivas, las especificaciones técnicas para su ejecución, la
+          plantilla de presupuestos y el cronograma.
+        </p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="front">
+        <img
+          src="/cards/card_4.jpg"
+          class="w-full h-full object-cover"
+          alt=""
+        />
+      </div>
+      <div class="back">
+        <h1 class="block w-full">Topografía</h1>
+        <p>
+          Descripción detallada de la superficie de un terreno, determinando las
+          posiciones de los diferentes tipos de puntos sobre la superficie de la
+          tierra, buscando tomar los datos que se necesitan para llevar a cabo
+          los cálculos que permitirán después representar estas medidas en un
+          plano con una escala adecuada, midiendo las distancias, los ángulos,
+          los volúmenes y las elevaciones del terreno.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="mobile block md:hidden px-6 text-sm">
+    <AccordionMobile />
+  </section>
+  <a
+    href="/servicios"
+    class="flex w-fit justify-center items-center gap-1 pb-2 md:mt-20 mx-auto border-2 px-6 pt-2 hover:bg-white border-white hover:text-black transition duration-300 ease-in-out text-base md:text-xl"
+    >Descubre más <i class="bi bi-chevron-right text-[9px]"></i></a
+  >
+</div>
+
+<style>
+  .card {
+    @apply h-[250px] md:h-[450px] min-w-[42%] md:min-w-[275px] 2xl:min-w-[300px];
+    color: black;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    perspective: 1000px;
+  }
+
+  .card .front,
+  .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  .card .front {
+    background: #e51321;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card .back {
+    background: #e51321;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    text-align: left;
+    color: #fff;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card h1 {
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .card:hover {
+    transform: rotateY(180deg);
+  }
+
+  .focus\:ring-4:focus {
+    --tw-ring-offset-shadow: none;
+    --tw-ring-shadow: none;
+    box-shadow: none;
+  }
+</style>

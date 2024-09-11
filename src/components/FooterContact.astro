@@ -1,0 +1,66 @@
+---
+type Props = {};
+
+const {} = Astro.props;
+---
+
+<div class="red-detail relative">
+  <h1 class="uppercase text-2xl md:text-3xl font-semibold mb-5 md:mb-10">
+    contáctanos
+  </h1>
+  <div class="grid md:grid-cols-4 gap-3">
+    <div>
+      <h3 class="uppercase">telefonos</h3>
+      <p>477-688-1172</p>
+    </div>
+    <div>
+      <h3 class="uppercase">e-mail</h3>
+      <a href="mailto:contacto@siicsamx.com">contacto@siicsamx.com</a>
+    </div>
+    <div>
+      <h3 class="uppercase">redes sociales</h3>
+      <span class="flex gap-3">
+        <div class="social-media">
+          <a
+            href="https://m.facebook.com/p/SIICSA-100057392990680/"
+            target="_blank">
+            
+          <img src="/images/facebook.svg" alt="facebook_logo" />
+          </a>
+        </div>
+        <div class="social-media mod-social-media">
+          <a href="https://www.instagram.com/siicsabajio/" target="_blank">
+            <img src="/images/instagram.svg" alt="instagram_logo" />
+          </a>
+        </div>
+        <!-- <div class="social-media">
+          <img src="/images/linkedin.svg" alt="linkedin_logo" />
+        </div> -->
+      </span>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* .red-detail::before{
+        content: '';
+        width: 50%;
+        height: 1px;
+        background: red;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }*/
+
+  .social-media {
+    width: 25px;
+    padding: 5px;
+    height: 25px;
+    border: 2px solid #fff;
+    border-radius: 2px;
+  }
+
+  .mod-social-media {
+    padding: 2px;
+  }
+</style>

@@ -1,0 +1,154 @@
+---
+---
+
+<div>
+  <div class="accordion-item">
+    <button class="accordion-button" id="accordion-button-1"
+      >Gerencia de proyectos</button
+    >
+    <div class="accordion-content hidden h-0">
+      Es el proceso que involucra la planificación de un proyecto, monitoreo y
+      control de la obra para que se lleve a cabo de manera exitosa, organizando
+      y administrando los recursos del proyecto para que sea elaborado y
+      terminado completamente dentro de las condiciones del alcance, tiempo y
+      costo planificado.
+    </div>
+  </div>
+  <div class="accordion-item">
+    <button class="accordion-button" id="accordion-button-2"
+      >Supervisión de Obra Civil</button
+    >
+    <div class="accordion-content hidden">
+      Proceso orientado a la función administrativa de la Dirección o
+      Gerenciamiento; Planeación, organización, control y conciliación en los
+      procesos constructivos. Sus responsabilidades caen en la supervisión del
+      cumplimiento del tiempo de ejecución, costos, y la calidad con respecto a
+      los requerimientos del constructor o desarrollador...
+    </div>
+  </div>
+  <div class="accordion-item">
+    <button class="accordion-button" id="accordion-button-3"
+      >Proyectos Ejecutivos</button
+    >
+    <div class="accordion-content hidden">
+      Una de las fases en la elaboración de una Obra / Proyecto, es el Proyecto
+      Ejecutivo, en donde se definen los diseños del proyecto / planos de
+      dibujos detallados, el cálculo estructural, las memorias descriptivas, las
+      especificaciones técnicas para su ejecución, la plantilla de presupuestos
+      y el cronograma.
+    </div>
+  </div>
+</div>
+<div class="accordion-item">
+  <button class="accordion-button" id="accordion-button-4">Topografía</button>
+  <div class="accordion-content hidden">
+    Descripción detallada de la superficie de un terreno, determinando las
+    posiciones de los diferentes tipos de puntos sobre la superficie de la
+    tierra, buscando tomar los datos que se necesitan para llevar a cabo los
+    cálculos que permitirán después representar estas medidas en un plano con
+    una escala adecuada, midiendo las distancias, los ángulos, los volúmenes y
+    las elevaciones del terreno.
+  </div>
+</div>
+
+<script>
+  let accordionButtons = Array.from(
+    document.querySelectorAll(".accordion-button")
+  );
+
+  let accordionContents = Array.from(
+    document.querySelectorAll(".accordion-content")
+  );
+
+  accordionButtons.forEach((button, i) => {
+    button.addEventListener("click", () => {
+      button.classList.toggle("active");
+      let accordionContent = accordionContents[i];
+
+      accordionContent.classList.toggle("hidden");
+      accordionContent.classList.replace("h-0", "h-fit");
+
+      accordionButtons.forEach((btn, index) => {
+        if (index !== i) {
+          btn.classList.remove("active");
+          accordionContents[index].classList.add("hidden");
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .accordion-item {
+    @apply text-left my-4 border border-gray-700;
+  }
+
+  .accordion-button {
+    @apply w-full text-left px-3 py-6 text-white font-bold cursor-pointer relative text-lg;
+    z-index: 99;
+  }
+
+  #accordion-button-1::before {
+    content: "";
+    background-image: url("/cards/m_card_1.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+  }
+  #accordion-button-2::before {
+    content: "";
+    background-image: url("/cards/m_card_2.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+  }
+  #accordion-button-3::before {
+    content: "";
+    background-image: url("/cards/m_card_3.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+  }
+  #accordion-button-4::before {
+    content: "";
+    background-image: url("/cards/m_card_4.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+  }
+
+  .accordion-button::after {
+    content: "";
+    background-color: rgba(196, 0, 0, 0.65);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }
+
+  .accordion-content {
+    @apply px-3 py-4 box-border;
+  }
+
+  .active {
+    @apply bg-gray-200 border-b border-gray-700 h-fit;
+  }
+</style>

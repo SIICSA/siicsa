@@ -1,0 +1,150 @@
+---
+import PageIntro from "../../components/PageIntro.astro";
+import Layout from "../../layouts/Layout.astro";
+import Carousel from "../../components/react/Carousel";
+---
+
+<Layout title="Servicios">
+  <main
+    class="text-[16px] 2xl:text-[18px] px-0 3xl:px-96 transition-all"
+  >
+    <PageIntro image="/banners/banner_servicios_st.jpg" texto="SERVICIOS" />
+    <section class="px-6 md:mx-36 md:px-0 mt-8 md:mt-20 text-center">
+      <h2 class="uppercase text-3xl md:text-5xl font-bold mb-8 md:mb-16">
+        Soluciones para tus proyectos
+      </h2>
+      <div class="service">
+        <div class="md:flex items-end">
+          <div class="img-container hidden md:block">
+            <img src="/images/services_1.png" alt="" />
+          </div>
+        </div>
+        <div class="md:items-start">
+          <h3>Gerencia de Proyectos</h3>
+          <div class="img-container md:hidden-important my-6">
+            <img src="/images/services_1.png" alt="" />
+          </div>
+          <p class="text-left">
+            Es el proceso que involucra la planeación de un proyecto, monitoreo
+            y control de la Obra para que se lleve a cabo de manera exitosa,
+            organizando y administrando los recursos del proyecto para que sea
+            elaborado y terminado completamente dentro de las condicionantes del
+            alcance, el tiempo y el costo planificado.
+          </p>
+        </div>
+      </div>
+      <div class="service">
+        <div class="md:items-end">
+          <h3>Supervisión de Obra Civil</h3>
+          <div class="img-container md:hidden-important my-6">
+            <img src="/images/services_2.png" alt="" />
+          </div>
+          <p class="text-left md:text-right">
+            Proceso que esta altamente orientado a la función administrativa de
+            la Dirección o Gerenciamiento, asi como la planeación, organización.
+            control y conciliación en los procesos construction. Sus
+            responsabilidades caen en la supervision del cumplimiento del tiempo
+            de ejecución, costos y la calidad con respecto a los requerimientos
+            del constructor o desarrollador. La supervision revisa y apWa en el
+            cumplimiento con la ley y norma aplicable a la seguridad e higiene
+            del personal técnico y obrero, como el impacto al medio ambiente q
+            ue puedan tener los procesos constructivos.
+          </p>
+        </div>
+        <div class="container">
+          <div class="img-container mt-6 hidden md:block md:mt-0">
+            <img src="/images/services_2.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="service">
+        <div class="md:flex items-end">
+          <div class="img-container hidden md:block">
+            <img src="/images/services_3.png" alt="" />
+          </div>
+        </div>
+        <div class="md:items-start">
+          <h3>Proyectos ejecutivos</h3>
+          <div class="img-container md:hidden-important my-6">
+            <img src="/images/services_3.png" alt="" />
+          </div>
+          <p class="text-left">
+            Una de las fases en la elaboración de una Obra/Proyecto es el
+            Proyecto Ejecutivo, en donde se definen los diseños del
+            proyecto/planos de dibujos detallados, el calculo estructural, las
+            memorias descriptivas, las especificaciones técnicas para su
+            ejecución, la plantilla de presupuestos y el cronograma.
+          </p>
+        </div>
+      </div>
+      <div class="service">
+        <div class="md:items-end">
+          <h3>Topografía</h3>
+          <div class="img-container md:hidden-important my-6">
+            <img src="/images/services_4.png" alt="" />
+          </div>
+          <p class="text-left md:text-right">
+            Es una descripción de manera detallada de la superficie de un
+            terreno, determinando las posiciones de los diferentes tipos de
+            puntos sobre la superficie de la tierra, buscando tomar los datos
+            que se necesitan para llevar a cabo los cálculos que permitirán
+            después representar estas medidas en un plano con una escala
+            adecuada, midiendo las distancias, los ángulos, los volúmenes y las
+            elevaciones del terreno. La representación de todo esto se lleva a
+            cabo a través de una proyección acotada, los diferentes puntos del
+            terreno se representan a través de la proyección ortogonal. También
+            las medidas pueden obtenerse angulares o lineales.
+          </p>
+        </div>
+        <div class="container justify-start">
+          <div class="img-container mt-6 hidden md:block md:mt-0">
+            <img src="/images/services_4.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <section
+    class="bg-primary border-b border-b-red-600 px-0 md:px-16 2xl:px-44 3xl:px-96 transition-all"
+  >
+    
+    <Carousel idCarousel={1}  client:load />
+  </section>
+</Layout>
+
+<style>
+  .service {
+    @apply flex flex-col md:flex-row items-center justify-center md:gap-10 mb-10;
+  }
+
+  .service > div {
+    @apply flex flex-col md:w-1/2 max-w-[505px];
+  }
+
+  .container {
+    @apply md:w-1/2;
+  }
+
+  .img-container {
+    @apply border-accent border-[3px] w-fit p-3 md:min-w-[505px];
+  }
+  .img-container > img {
+    @apply md:w-[475px] md:h-[320px] object-cover;
+  }
+
+  .service > div > h3 {
+    @apply text-2xl md:text-2xl font-bold bg-accent w-full md:w-fit  px-3 py-1 mb-2;
+  }
+
+  .service > div > p {
+    @apply text-sm;
+  }
+
+  .service > div > p {
+  }
+  @media (min-width: 768px) {
+    .md\:hidden-important {
+      display: none !important;
+    }
+  }
+</style>

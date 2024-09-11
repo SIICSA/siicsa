@@ -1,0 +1,83 @@
+---
+
+---
+
+<div class="text-[16px]">
+  <header
+    class="flex justify-between items-center py-6 px-6 md:px-16 2xl:px-44 3xl:px-96 transition-all duration-300 bg-black"
+  >
+    <a href="/"><img src="/images/logo.svg" class="h-7 md:h-10" alt="" /></a>
+    <nav class="flex">
+      <ul class="hidden md:flex gap-10 font-medium items-center">
+        <a id="inicio" href="/">Inicio</a>
+        <a id="nosotros" href="/nosotros/">Nosotros</a>
+        <a id="servicios" href="/servicios/">Servicios</a>
+        <a id="contacto" href="/contacto/">Contacto</a>
+      </ul>
+    </nav>
+    <button id="menu-btn" class="w-8 h-8 block md:hidden"
+      ><img src="/images/menu.svg" alt="" /></button
+    >
+  </header>
+  <div
+    id="menu-toggle"
+    class="absolute z-[99] bg-black w-full hidden animate__animated animate__fadeInDown animate__faster"
+  >
+    <ul class="flex flex-col gap-10 font-medium items-center py-10">
+      <a id="inicio" href="/">Inicio</a>
+      <a id="nosotros" href="/nosotros/">Nosotros</a>
+      <a id="servicios" href="/servicios/">Servicios</a>
+      <a id="contacto" href="/contacto/">Contacto</a>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .active {
+    @apply text-red-600;
+  }
+</style>
+
+<script>
+  let menu = document.getElementById("menu-toggle");
+  let menuBtn = document.getElementById("menu-btn");
+  window.addEventListener("load", () => {
+    let location = window.location.pathname.replaceAll("/", "");
+    let options: { path: string; el: HTMLElement | null }[] = [
+      {
+        path: "inicio",
+        el: document.getElementById("inicio"),
+      },
+      {
+        path: "nosotros",
+        el: document.getElementById("nosotros"),
+      },
+      {
+        path: "servicios",
+        el: document.getElementById("servicios"),
+      },
+      {
+        path: "contacto",
+        el: document.getElementById("contacto"),
+      },
+    ];
+
+    if (location.length == 0) {
+      location = "inicio";
+    }
+
+    options.map((item) => {
+      if (location.includes(item.path)) {
+        item.el?.classList.toggle("active");
+      } else if (location.length == 0 && item.path.length == 0) {
+        item.el?.classList.toggle("active");
+      } else {
+        item.el?.classList.remove("active");
+      }
+    });
+  });
+
+  menuBtn?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+  });
+</script>

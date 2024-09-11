@@ -1,0 +1,96 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Carousel from "../components/Carousel.astro";
+import Carousel2 from "../components/react/Carousel";
+import Cards from "../components/Cards.astro";
+import CardsTwo from "../components/Cards_two.astro";
+---
+
+<Layout title="Inicio">
+  <main>
+    <div class="px-0 md:px-16 2xl:px-44 3xl:px-96 transition-all">
+      <Carousel />
+    </div>
+    
+    <section class="section-1 md:h-[650px] text-[15px] 2xl:text-[18px]">
+      <div
+        class="md:flex flex-col justify-center md:w-4/6 px-0 md:px-16 2xl:px-44 3xl:px-96 transition-all md:text-left"
+      >
+        <img
+          src="/images/logo.png"
+          class="w-[160px] mx-auto md:mx-0 mb-10"
+          alt=""
+        />
+        <h2 class="text-3xl md:text-4xl font-semibold mb-4">
+          ¡BIENVENIDO A <br /> SIICSA BAJÍO!
+        </h2>
+        <p>
+          <p>
+            Somos una organización fundada en solidos valores que permiten el
+            cumplimiento exitoso de los objetivos, estamos comprometidos de
+            manera profesional y ética con todos nuestros clientes y sus
+            proyectos.
+          </p>
+          <br />
+          <p>
+            Estamos formados por un grupo de profesionistas multidisciplinarios,
+            enfocados en el sector construcción, tanto publico como privado, por
+            Io que aquí podrá encontrar el medio ideal para desarrollar con
+            eficiencia y eficacia todos sus proyectos.
+          </p>
+        </p>
+      </div>
+      <div class="md:w-2/6 mt-10 md:mt-0">
+        <img
+          src="/images/quienes_somos_inicio.jpg"
+          class="w-full h-full object-cover"
+          alt=""
+        />
+      </div>
+    </section>
+    <section
+      class="section-2 px-6 md:py-0 2xl:py-28 my-10 text-center md:text-right md:min-h-[450px] md:flex justify-end"
+    >
+      <div
+        class="py-10 md:py-0 md:w-3/6 2xl:w-4/6 px-0 md:px-16 2xl:px-44 3xl:px-96 transition-all md:flex flex-col justify-center text-[15px] 2xl:text-[18px]"
+      >
+        <h2 class="text-2xl md:text-4xl font-bold mb-5">POLÍTICA DE CALIDAD</h2>
+        <p>
+          "Servicio Integral de Ingeniería Civil del Bajío se ha dedicado desde
+          sus inicios al Gerenciamiento de Obra entendiéndose como la
+          coordinación de elaboración y ejecución de Proyectos, Supervision y
+          Topografía. Nuestro compromiso es proporcionar un producto y servicio
+          con la calidad que la buena practica nos exige y que ademas cumplan
+          con los tiempos establecidos y requerimientos de nuestros clientes con
+          el compromiso de la mejora continua.
+        </p>
+        <br />
+        <p>
+          Nuestra Política de calidad basa su acción conforme a nuestros valores
+          y pilares estratégicos: Ética, Responsabilidad, Confidencialidad,
+          Honradez, Compañerismo, Competitividad, Tolerancia y Respeto."
+        </p>
+      </div>
+    </section>
+    <div class="bg-primary px-0 md:px-16 2xl:px-44 3xl:px-96 transition-all">
+      <Cards />
+    </div>
+    <div class="bg-primary px-0 md:px-16 2xl:px-44 3xl:px-96 transition-all">
+      <Carousel2 idCarousel={2} client:load />
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .section-1 {
+    @apply py-10 md:py-0 px-6 md:px-0 md:flex;
+    background-image: url("/images/inicio_bg_01.jpg");
+    background-size: cover;
+    text-align: center;
+  }
+  .section-2 {
+    @apply flex;
+    background-image: url("/images/inicio_bg_02.jpg");
+    background-size: cover;
+  }
+</style>

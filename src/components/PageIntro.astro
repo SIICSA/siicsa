@@ -1,0 +1,56 @@
+---
+type Props = {
+  image: string;
+  texto: string;
+};
+
+const { image, texto } = Astro.props;
+---
+
+<div class="w-full relative red-element text-center">
+  <!-- <h1 class="text-6xl">Image</h1> -->
+  <div class="overflow-hidden image-container">
+    <h1 >{texto}</h1>
+    <img src={image} alt="" class="mx-auto h-full" />
+  </div>
+</div>
+
+<style>
+  .red-element::after {
+    content: "";
+    width: 1px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    z-index: 50;
+    left: 50%;
+    background: #c6101d;
+    transform: translateX(-50%) translateY(50%);
+  }
+
+  @media screen and (max-width: 600px) {
+    .red-element::after {
+      width: 0.01rem;
+      height: 25px;
+    }
+  }
+
+  .image-container {
+    @apply w-full relative h-[180px] md:h-[460px];
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .image-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-container > h1 {
+    @apply absolute text-white text-3xl font-semibold z-10 uppercase md:text-7xl;
+  }
+  /* h-[200px] md:h-[460px] xl:h-[500px] 2xl:h-[800px]  */
+</style>

@@ -1,0 +1,147 @@
+---
+
+---
+
+<div class="bg-black relative flex flex-col justify-center items-center">
+  <div class="relative w-full">
+    <!-- Carousel wrapper -->
+    <div class="relative h-36 overflow-hidden sm:h-64 xl:h-[500px] 2xl:h-[650px]">
+      <!-- Item 1 -->
+      <div id="carousel-item-1" class="hidden duration-700 ease-in-out">
+        <img
+          src="/carousel/carousel_image_1.jpg"
+          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          alt="..."
+        />
+      </div>
+      <!-- Item 2 -->
+      <div id="carousel-item-2" class="hidden duration-700 ease-in-out">
+        <img
+          src="/carousel/carousel_image_2.jpg"
+          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          alt="..."
+        />
+      </div>
+      <!-- Item 3 -->
+      <div id="carousel-item-3" class="hidden duration-700 ease-in-out">
+        <img
+          src="/carousel/carousel_image_3.jpg"
+          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          alt="..."
+        />
+      </div>
+      <!-- Item 4 -->
+      <div id="carousel-item-4" class="hidden duration-700 ease-in-out">
+        <img
+          src="/carousel/carousel_image_4.jpg"
+          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          alt="..."
+        />
+      </div>
+    </div>
+  </div>
+  <div class="flex py-5 md:py-11 gap-3">
+    <button
+      id="carousel-indicator-1"
+      type="button"
+      class="w-6 h-6 rounded-full border-none flex justify-center bg-transparent items-center"
+      aria-current="true"
+      aria-label="Slide 1"
+      ><div class="w-[4px] h-[4px] bg-white rounded-full"></div></button
+    >
+    <button
+      id="carousel-indicator-2"
+      type="button"
+      class="w-6 h-6 rounded-full border-none flex justify-center bg-transparent items-center"
+      aria-current="false"
+      aria-label="Slide 2"
+      ><div class="w-[4px] h-[4px] bg-white rounded-full"></div></button
+    >
+    <button
+      id="carousel-indicator-3"
+      type="button"
+      class="w-6 h-6 rounded-full border-none flex justify-center bg-transparent items-center"
+      aria-current="false"
+      aria-label="Slide 3"
+      ><div class="w-[4px] h-[4px] bg-white rounded-full"></div></button
+    >
+    <button
+      id="carousel-indicator-4"
+      type="button"
+      class="w-6 h-6 rounded-full border-none flex justify-center items-center bg-transparent border-red-600 border"
+      aria-current="false"
+      aria-label="Slide 4"
+      ><div class="w-[4px] h-[4px] bg-white rounded-full"></div></button
+    >
+  </div>
+</div>
+
+<script>
+  import { Carousel as CarouselFB } from "flowbite";
+  import type { CarouselItem } from "flowbite";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const items: CarouselItem[] = [
+      {
+        position: 0,
+        el: document.getElementById("carousel-item-1")!,
+      },
+      {
+        position: 1,
+        el: document.getElementById("carousel-item-2")!,
+      },
+      {
+        position: 2,
+        el: document.getElementById("carousel-item-3")!,
+      },
+      {
+        position: 3,
+        el: document.getElementById("carousel-item-4")!,
+      },
+    ];
+
+    const options = {
+      defaultPosition: 0,
+      interval: 3000,
+      indicators: {
+        activeClasses: "border border-red-600",
+        inactiveClasses: "border-none",
+        items: [
+          {
+            position: 0,
+            el: document.getElementById("carousel-indicator-1")!,
+          },
+          {
+            position: 1,
+            el: document.getElementById("carousel-indicator-2")!,
+          },
+          {
+            position: 2,
+            el: document.getElementById("carousel-indicator-3")!,
+          },
+          {
+            position: 3,
+            el: document.getElementById("carousel-indicator-4")!,
+          },
+        ],
+      },
+
+      // callback functions
+      onNext: () => {
+        console.log("next slider item is shown");
+      },
+      onPrev: () => {
+        console.log("previous slider item is shown");
+      },
+      onChange: () => {},
+    };
+
+    const carousel = new CarouselFB(items, options);
+
+    let carouselAuto = setInterval(() => {
+      carousel.next();
+    }, 10000);
+  });
+</script>
+
+<style></style>

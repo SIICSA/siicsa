@@ -1,0 +1,61 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageIntro from "../../components/PageIntro.astro";
+---
+
+<Layout title="Contacto">
+  <main class="px-0 3xl:px-96 transition-all">
+    <PageIntro image="/banners/banner_contacto_st.jpg" texto="Encuéntranos" />
+
+    <section
+      id="contact"
+      class="pt-10 md:pt-20 pb-16 px-6 flex flex-col-reverse md:flex-row justify-center gap-14"
+    >
+      <div class="md:w-1/2 flex justify-center md:justify-end">
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.046424167145!2d-101.6736567!3d21.1505507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bbf3ac492ef27%3A0xa3189e9eb1dd72f7!2sSIICSA%20BAJIO%20(SERVICIO%20INTEGRAL%20DE%20INGENIERIA%20CIVIL%20DEL%20BAJIO)!5e0!3m2!1ses-419!2smx!4v1703021046775!5m2!1ses-419!2smx"  style="border:0;" class="h-[500px] w-1/2" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="text-center md:text-left md:w-1/2">
+        <h2 class="text-3xl md:text-4xl font-semibold mb-4">ESCRÍBENOS</h2>
+        <form
+          action="submit"
+          class="grid mx-auto md:mx-0 md:w-[358px] 2xl:w-[458px]"
+        >
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="Nombre"
+            class="pl-0 bg-transparent placeholder:text-white text-xl border-0 border-b-2 border-red-600"
+          />
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="Correo electrónico"
+            class="pl-0 bg-transparent placeholder:text-white text-xl border-0 border-b-2 border-red-600"
+          />
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="Asunto"
+            class="pl-0 bg-transparent placeholder:text-white text-xl border-0 border-b-2 border-red-600"
+          />
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="7"
+            class="pl-0 bg-transparent placeholder:text-white text-xl border-0 border-b-2 border-red-600"
+            placeholder="Escribe tu mensaje"></textarea>
+          <button class="px-10 py-1 border w-fit mt-6 mx-auto md:mx-0"
+            >Enviar</button
+          >
+        </form>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style></style>
